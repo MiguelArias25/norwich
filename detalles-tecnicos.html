@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NORWICH_//DETALLES_TÉCNICOS</title>
+    <style>
+        /* ==== 🌃 ESTILOS CYBERPUNK GLOBALES ==== */
+        :root {
+            --neon-green: #0ff;
+            --neon-pink: #ff00ff;
+            --neon-blue: #0078d7;
+            --neon-orange: #FF5722;
+            --dark-bg: rgba(10, 10, 30, 0.95);
+            --darker-bg: rgba(0, 5, 15, 0.9);
+            --text-glow: 0 0 10px currentColor;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            background: url('4884841.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==== 🖥️ HEADER CYBERPUNK ==== */
+        header {
+            background: linear-gradient(135deg, var(--darker-bg), rgba(20,0,30,0.9)) !important;
+            border-bottom: 1px solid var(--neon-green);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px var(--neon-green));
+        }
+
+        header img:hover {
+            transform: rotate(15deg) scale(1.1);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        header h1 {
+            color: var(--neon-green);
+            text-shadow: var(--text-glow);
+            letter-spacing: 2px;
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+            margin: 5px 0 0;
+        }
+
+        /* ==== 🕹️ NAVEGACIÓN NEON ==== */
+        nav {
+            background: rgba(0, 0, 20, 0.9) !important;
+            box-shadow: 0 2px 15px rgba(0, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white !important;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px white;
+        }
+
+        nav ul li:hover > a {
+            color: var(--neon-green) !important;
+            text-shadow: 0 0 10px var(--neon-green);
+            background: rgba(0, 255, 255, 0.1) !important;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: rgba(0, 10, 20, 0.95) !important;
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            z-index: 1000;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        nav ul li ul li a {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        /* ==== 🖥️ SECCIÓN TÉCNICA CYBER ==== */
+        .tech-section {
+            background: linear-gradient(135deg, rgba(0,0,30,0.8), rgba(0,20,30,0.8)) !important;
+            border-top: 2px solid var(--neon-green) !important;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            padding: 40px 20px;
+            margin-top: 50px;
+            display: block; /* Mostrar siempre en esta página */
+        }
+
+        .tech-section h2 {
+            text-align: center;
+            color: var(--neon-orange);
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 0 0 10px var(--neon-orange);
+        }
+
+        .service-tabs {
+            background: linear-gradient(135deg, rgba(0,5,15,0.9), rgba(0,15,25,0.9)) !important;
+            border: 1px solid var(--neon-green) !important;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-header {
+            display: flex;
+            background: rgba(0, 10, 20, 0.7) !important;
+            border-bottom: 2px solid var(--neon-green) !important;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            color: #ccc !important;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            flex-grow: 1;
+            text-align: center;
+            text-shadow: 0 0 5px #ccc;
+        }
+
+        .tab-button:hover {
+            background: rgba(0, 255, 255, 0.1) !important;
+            color: var(--neon-green) !important;
+            text-shadow: var(--text-glow);
+        }
+
+        .tab-button.active {
+            color: var(--neon-orange) !important;
+            text-shadow: 0 0 10px var(--neon-orange);
+            background: rgba(255, 0, 255, 0.1) !important;
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-orange), var(--neon-green));
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 25px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            color: var(--neon-green);
+            margin-top: 0;
+            text-shadow: var(--text-glow);
+        }
+
+        .tech-list {
+            columns: 2;
+            gap: 20px;
+        }
+
+        .tech-list li {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            background: rgba(0, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 6px;
+            list-style: none;
+            border-left: 3px solid var(--neon-green);
+            transition: all 0.3s ease;
+        }
+
+        .tech-list li:hover {
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateX(5px);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        }
+
+        .tech-list span {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* ==== 🖥️ ESTILOS ESPECÍFICOS PARA SISTEMAS OPERATIVOS ==== */
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .os-card {
+            background: var(--dark-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .os-card.windows {
+            border-left-color: var(--neon-blue);
+        }
+
+        .os-card.linux {
+            border-left-color: #3a7b3a;
+        }
+
+        .os-card.macos {
+            border-left-color: #a0a0a0;
+        }
+
+        .os-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 120, 215, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .os-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px;
+        }
+
+        .os-card.windows:hover {
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        .os-card.linux:hover {
+            box-shadow: 0 0 20px #3a7b3a;
+        }
+
+        .os-card.macos:hover {
+            box-shadow: 0 0 20px #a0a0a0;
+        }
+
+        .os-card:hover::before {
+            opacity: 1;
+        }
+
+        .os-icon {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .os-icon img {
+            height: 60px;
+            filter: drop-shadow(0 0 5px);
+        }
+
+        .windows .os-icon img {
+            filter: drop-shadow(0 0 5px var(--neon-blue));
+        }
+
+        .linux .os-icon img {
+            filter: drop-shadow(0 0 5px #3a7b3a);
+        }
+
+        .macos .os-icon img {
+            filter: drop-shadow(0 0 5px #a0a0a0);
+        }
+
+        .os-card h4 {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 10px 0;
+            text-shadow: 0 0 5px;
+        }
+
+        .windows h4 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .linux h4 {
+            color: #3a7b3a;
+            text-shadow: 0 0 5px #3a7b3a;
+        }
+
+        .macos h4 {
+            color: #a0a0a0;
+            text-shadow: 0 0 5px #a0a0a0;
+        }
+
+        .cyber-list {
+            list-style: none;
+            padding: 0 20px;
+            color: #e0e0e0;
+        }
+
+        .cyber-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0, 255, 255, 0.3);
+            font-family: 'Courier New', monospace;
+        }
+
+        .cyber-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ==== 📞 MODAL CYBERPUNK ==== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, var(--darker-bg), rgba(0,10,20,0.95)) !important;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid var(--neon-pink) !important;
+            position: relative;
+            box-shadow: 0 0 30px var(--neon-pink);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: var(--neon-pink) !important;
+            text-shadow: var(--text-glow);
+        }
+
+        /* ==== 🏁 FOOTER ==== */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--darker-bg), rgba(20,0,30,0.9)) !important;
+            border-top: 1px solid var(--neon-green);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        /* ==== 📱 RESPONSIVE ==== */
+        @media (max-width: 768px) {
+            .services-container, .os-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul li ul {
+                position: static;
+                width: 100%;
+            }
+            
+            .tech-list {
+                columns: 1;
+            }
+            
+            .os-card {
+                width: 100%;
+            }
+        }
+
+        /* ==== 🎨 ESTILOS ADICIONALES ==== */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.7; }
+        }
+
+        .neon-title {
+            animation: flicker 3s infinite alternate;
+        }
+
+        .cyber-card {
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        /* Botón de volver */
+        .back-button {
+            display: block;
+            margin: 40px auto;
+            text-align: center;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-shadow: var(--text-glow);
+            max-width: 200px;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px var(--neon-green);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Efecto scanlines para estilo retro -->
+    <div class="scanlines"></div>
+
+    <!-- Encabezado con logo redondo -->
+    <header>
+        <div class="header-container">
+            <img src="logopaginaweb.jpeg" alt="Logo Norwich">
+            <div>
+                <h1>NORWICH_//TECH</h1>
+                <p>DETALLES_TÉCNICOS</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li>
+                <a href="Norwich.html">INICIO</a>
+            </li>
+            <li>
+                <a href="#">NOSOTROS</a>
+                <ul>
+                    <li><a href="mision.html">MISIÓN</a></li>
+                    <li><a href="vision.html">VISIÓN</a></li>
+                    <li><a href="quienes.html">QUIÉNES_SOMOS</a></li>
+                </ul>
+            </li>
+            <li><a href="Norwich.html#servicios">SERVICIOS</a></li>
+            <li>
+                <a href="#">REPUESTOS</a>
+                <ul>
+                    <li><a href="perifericos.html">PERIFÉRICOS</a></li>
+                    <li><a href="almacenamiento.html">ALMACENAMIENTO</a></li>
+                    <li><a href="componentes.html">COMPONENTES</a></li>
+                    <li><a href="redes.html">REDES</a></li>
+                </ul>
+            </li>
+            <li><a href="Norwich.html#envios">ENVÍOS</a></li>
+            <li><a href="Norwich.html#contacto">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Detalles Técnicos -->
+    <section class="tech-section" id="tech-details">
+        <h2>DETALLES_TÉCNICOS</h2>
+        <div class="service-tabs">
+            <div class="tab-header">
+                <button class="tab-button active" data-tab="tab1">MANTENIMIENTO</button>
+                <button class="tab-button" data-tab="tab2">SISTEMAS_OPERATIVOS</button>
+                <button class="tab-button" data-tab="tab3">SOPORTE_REMOTO</button>
+                <button class="tab-button" data-tab="tab4">IMPRESORAS</button>
+            </div>
+
+            <div id="tab1" class="tab-content active">
+                <h3>MANTENIMIENTO_PROFESIONAL</h3>
+                <ul class="tech-list">
+                    <li><span>🛠️</span> Desmontaje y limpieza de componentes con aire comprimido profesional</li>
+                    <li><span>🔍</span> Diagnóstico con software especializado (HWMonitor, CrystalDiskInfo)</li>
+                    <li><span>🧼</span> Limpieza de disipadores y aplicación de pasta térmica nueva (Arctic MX-4)</li>
+                    <li><span>⚡</span> Optimización del sistema operativo (eliminación de bloatware, servicios innecesarios)</li>
+                    <li><span>🛡️</span> Instalación de antivirus (Kaspersky/Bitdefender) y herramientas de mantenimiento</li>
+                    <li><span>🔋</span> Verificación de estado de batería (para laptops)</li>
+                    <li><span>💾</span> Comprobación de SMART status en discos duros/SSD</li>
+                    <li><span>📝</span> Informe detallado del estado del equipo (incluye fotos antes/después)</li>
+                    <li><span>🧪</span> Test de estrés (Prime95/FurMark) para verificar estabilidad</li>
+                </ul>
+                <a href="Norwich.html#contacto" class="cta-button">SOLICITAR_MANTENIMIENTO</a>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <h3 class="neon-title">// INSTALACIÓN DE SISTEMAS_OPERATIVOS</h3>
+                <div class="os-grid">
+                    <!-- Windows Card -->
+                    <div class="os-card windows">
+                        <div class="os-icon">
+                            <img src="windows-11.png" alt="Windows">
+                        </div>
+                        <h4>WINDOWS_OS</h4>
+                        <ul class="cyber-list">
+                            <li>» 10/11 Pro/Home</li>
+                            <li>» Activación legal</li>
+                            <li>» Migración de datos</li>
+                            <li>» Drivers actualizados</li>
+                            <li>» Recuperación de datos</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Linux Card -->
+                    <div class="os-card linux">
+                        <div class="os-icon">
+                            <img src="6124995.png" alt="Linux">
+                        </div>
+                        <h4>LINUX_OS</h4>
+                        <ul class="cyber-list">
+                            <li>» Ubuntu/Mint/Fedora</li>
+                            <li>» Configuración Wine</li>
+                            <li>» Dual Boot</li>
+                            <li>» Soporte post-instalación</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- MacOS Card -->
+                    <div class="os-card macos">
+                        <div class="os-icon">
+                            <img src="Apple-logo.png" alt="MacOS">
+                        </div>
+                        <h4>MAC_OS</h4>
+                        <ul class="cyber-list">
+                            <li>» Instalación limpia (APFS)</li>
+                            <li>» Time Machine</li>
+                            <li>» Optimización Dev</li>
+                            <li>» Recuperación de datos</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="Norwich.html#contacto" class="cta-button">SOLICITAR_INSTALACIÓN</a>
+            </div>
+
+            <div id="tab3" class="tab-content">
+                <h3>SOPORTE_TÉCNICO_REMOTO</h3>
+                <ul class="tech-list">
+                    <li><span>💻</span> Conexión segura mediante AnyDesk/TeamViewer (encriptación AES-256)</li>
+                    <li><span>🛠️</span> Solución de errores de software (BSOD, crashes, rendimiento)</li>
+                    <li><span>🔒</span> Configuración de seguridad (firewall, antivirus, permisos)</li>
+                    <li><span>📶</span> Optimización de conexiones de red (TCP/IP, DNS, WiFi)</li>
+                    <li><span>🔄</span> Migración de datos entre equipos (discos, nube)</li>
+                    <li><span>⏱️</span> Servicio express (solución en menos de 1 hora)</li>
+                    <li><span>📊</span> Monitoreo remoto de hardware (temperaturas, voltajes)</li>
+                    <li><span>🧹</span> Limpieza de malware avanzada (rootkits, ransomware)</li>
+                    <li><span>💾</span> Configuración de backups automáticos</li>
+                </ul>
+                <a href="Norwich.html#contacto" class="cta-button">SOLICITAR_SOPORTE</a>
+            </div>
+
+            <div id="tab4" class="tab-content">
+                <h3>REPARACIÓN_DE_IMPRESORAS</h3>
+                <ul class="tech-list">
+                    <li><span>🖨️</span> Todas las marcas: HP, Epson, Canon, Brother, Lexmark</li>
+                    <li><span>🧹</span> Limpieza interna profesional (cabezales, rodillos, engranajes)</li>
+                    <li><span>🔧</span> Reparación de mecanismos de alimentación</li>
+                    <li><span>💾</span> Actualización de firmware</li>
+                    <li><span>📡</span> Configuración de impresión en red (TCP/IP, WiFi Direct)</li>
+                    <li><span>🔄</span> Recarga de tóner/tinta con productos originales o alternativos premium</li>
+                    <li><span>🔌</span> Reparación de fuentes de poder y circuitos</li>
+                    <li><span>📝</span> Calibración de color (para impresoras fotográficas)</li>
+                    <li><span>🧪</span> Diagnóstico electrónico (multímetro, osciloscopio)</li>
+                </ul>
+                <a href="Norwich.html#contacto" class="cta-button">AGENDAR_REPARACIÓN</a>
+            </div>
+        </div>
+
+        <!-- Botón para volver a servicios -->
+        <a href="Norwich.html#servicios" class="back-button">VOLVER_A_SERVICIOS</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 NORWICH TECH | SERVICIOS_TÉCNICOS_PREMIUM</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Sistema de pestañas
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabButtons = document.querySelectorAll(".tab-button");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    // Quitar 'active' de todos
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    tabContents.forEach(tab => tab.classList.remove("active"));
+
+                    // Activar el seleccionado
+                    button.classList.add("active");
+                    const tabId = button.getAttribute("data-tab");
+                    document.getElementById(tabId).classList.add("active");
+                });
+            });
+
+            // Mostrar por defecto el primer tab
+            if (tabContents[0]) {
+                tabContents[0].classList.add("active");
+            }
+        });
+
+        // Efecto glow para las tarjetas de OS
+        document.querySelectorAll('.os-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.7)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

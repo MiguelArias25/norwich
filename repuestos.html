@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NORWICH_//SERVICIOS_TÉCNICOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', monospace;
+            background: #0a0a1e;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 0;
+        }
+        header, footer {
+            background: linear-gradient(135deg, #0f0f3d, #14142e);
+            text-align: center;
+            padding: 20px;
+            color: #0ff;
+            font-weight: bold;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #0ff;
+            color: #0ff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px #0ff;
+            transform: translateY(-2px);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #111;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #ff00ff;
+            color: #fff;
+            max-width: 400px;
+            text-align: center;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            color: #ff00ff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NORWICH_//SERVICIOS_TÉCNICOS</h1>
+</header>
+
+<main style="padding: 20px; text-align: center;">
+    <h2>REPARACIÓN_DE_IMPRESORAS</h2>
+    <p>Servicio especializado para todas las marcas con garantía por escrito.</p>
+    <a href="#" id="agendarBtn" class="cta-button">AGENDAR_REPARACIÓN</a>
+</main>
+
+<div id="agendarModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="document.getElementById('agendarModal').style.display='none'">&times;</span>
+        <h3>Agendar Reparación</h3>
+        <form>
+            <input type="text" placeholder="Nombre" required style="margin: 10px 0; width: 100%; padding: 8px;"><br>
+            <input type="email" placeholder="Correo" required style="margin: 10px 0; width: 100%; padding: 8px;"><br>
+            <textarea placeholder="Describe tu problema" required style="margin: 10px 0; width: 100%; padding: 8px;"></textarea><br>
+            <button type="submit" class="cta-button">Enviar</button>
+            <br><br>
+            <a href="https://wa.me/573007571533" target="_blank" class="cta-button">Contactar por WhatsApp</a>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById("agendarBtn").onclick = function() {
+    document.getElementById("agendarModal").style.display = "flex";
+};
+</script>
+
+<footer>
+    &copy; 2025 NORWICH Servicios Técnicos
+</footer>
+
+</body>
+</html>
